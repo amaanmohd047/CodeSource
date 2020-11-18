@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% block head %} {% endblock %}
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet"> 	
+	<!--<link rel="shortcut icon" href="{{ url_for('static', filename = 'icon.png') }}" type="image/x-icon">-->
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon.ico') }}">
+	<link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/floating-labels/">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@300;400&display=swap" rel="stylesheet"> 
+	<title>
+		{% block title %}
+		{% endblock %}
+	</title>
+		{% block style %}
+
+		{% endblock %}
+	<style>
+		
+	
+		.contact-submit{
+			float: right;
+		}
+		.txa{
+			color: rgb(255, 255, 255);
+		}
+		.inp{
+			color: rgb(255, 255, 255);
+		}
+		.dash {
+			color: rgb(170, 170, 170);
+		}
+		.dash:hover {
+			color: rgb(226, 226, 226);
+		}
+	</style>
+</head>
+<body style="font-family: 'Open Sans', sans-serif;">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+		  <a class="navbar-brand" href="{{ url_for('index') }}" style="font-size: 30px;font-family: 'Libre Baskerville', serif;">CodeSource</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+			  <li class="nav-item">
+				<a onclick="active()" class="nav-link" aria-current="page" href="{{ url_for('index') }}">Home</a>
+			  </li>
+			  <li class="nav-item">
+				<a onclick="active()" class="nav-link" href="{{ url_for('pythonpage') }}">Python</a>
+			  </li>
+			  <li class="nav-item">
+				<a onclick="active()" class="nav-link disabled" href="{{ url_for('cpp') }}">C++</a>
+			  </li>
+			  <li class="nav-item">
+				<a onclick="active()" class="nav-link disabled" href="{{ url_for('javascript') }}">Javascript</a>
+			  </li>
+			  <li class="nav-item dropdown">
+				<a onclick="active()" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+				  Projects
+				</a>
+				<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+				  <li><a onclick="active()" class="dropdown-item disabled" href="{{ url_for('web') }}">Web Dev</a></li>
+				  <li><a class="dropdown-item disabled" href="{{ url_for('mobiledev') }}" onclick="active()">Mobile Dev</a></li>
+				  <li><a onclick="active()" class="dropdown-item disabled" href="{{ url_for('gamedev') }}">Game Dev</a></li>
+				</ul>
+			  </li>
+			</ul>
+			<a href="{{ url_for('dashboard') }}" onclick="active()" class="nav-link dash">Dashboard</a>
+			<form class="d-flex" action="{{ url_for('search') }}" method="POST">
+			  <input class="form-control mr-2" name="title" type="search" placeholder="Search Title" aria-label="Search">
+			  <button class="btn btn-outline-light" type="submit">Search</button>
+			</form>
+		  </div>
+		</div>
+	</nav>
+    <section class="section">
+		
+			{% block section1 %}
+		
+			{% endblock %}
+		
+	</section>
+	<footer class="container-fluid bg-dark" style="height: 630px; color: white;">
+		<h1 style="text-align: center; padding-top: 25px; padding-bottom: 25px;"> Contact Us</h1>
+		<div class="mb-3" style="width: 80vw; padding-left: 15vw;">
+			<form action="{{ url_for('contacts') }}" method="POST">
+				<label for="email">Enter your name:</label>
+				<input type="text" name="name" id="name" placeholder="Full name" class="form-control inp bg-dark">
+				<br>
+				<label for="email">Enter your E-mail address:</label>
+				<input type="email" name="email" id="id-email" placeholder="Usage : name@example.com" class="form-control inp bg-dark">
+				<br>
+				<label for="message">Enter your message below:</label>
+				<textarea name="message" id="id-message" rows="5" class="form-control txa bg-dark"></textarea>
+				<br>
+				<button class="btn btn-outline-light contact-submit" type="submit">Send</button>
+				<br>
+				<br>
+				<br>
+			</form>
+		</div>
+		<hr style="color: white;">
+		<div class="footer-copyright text-center py-3">
+			© 2020 Copyright: RedFlurry INC.
+		</div>
+	</footer>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
+	<script>
+		active()
+	</script>
+</body>
+</html>

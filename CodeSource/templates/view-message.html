@@ -1,0 +1,14 @@
+{% extends 'dashboard.html' %}
+
+{% block main %}
+<div class="container">
+    <h4>
+        A Message From {{message.sender}}
+    </h4>
+    <div style="background-color: white; color: black; border-radius: 10px; margin: 10px; padding: 10px;">
+            <h6>
+                {{message.body}}
+            </h6>
+    </div>
+</div>
+{% endblock %}

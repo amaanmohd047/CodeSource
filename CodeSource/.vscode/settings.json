@@ -1,0 +1,11 @@
+{
+    "editor.fontLigatures": false,
+    "powermode.presets": "flames",
+    "powermode.shakeIntensity": 3,
+    "xd.lastPackage": "/home/amaanmohd/DTuolz/Minig",
+    "xd.globalEditor": true,
+    "python.linting.pylintArgs": [
+        "--load-plugins",
+        "pylint-flask"
+    ]
+}

@@ -1,0 +1,111 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Home-CodeSource
+{% endblock %}
+
+{% block style %}
+
+<style>
+    .content{
+        text-align: center;
+        vertical-align: middle;
+    }
+    p{
+        color: black;
+    }
+    .content h1{
+        padding-bottom: 05vw;
+        font-size: 130px;
+    }
+    .click-here{
+        padding: 15px 20px;
+        margin-bottom: 210px;
+        border-radius: 5px;
+    }
+    .click-here:hover{
+        border-radius: 10px;
+        /* margin-top: 4.5vw; */
+        padding: 18px 24px;
+    }
+</style>
+
+{% endblock %}
+
+{% block section1 %}
+
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{{ url_for('static', filename='python-bg.jpg') }}" class="d-block w-100" alt="background image">
+        <div class="carousel-caption d-none d-md-block content">
+          <h1>Learn Python</h1>
+          <form action="{{ url_for('pythonpage') }}" method="GET">
+                  <button class="btn btn-primary click-here" type="submit">Click Here</button>
+          </form>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='javascript-bg.png') }}" class="d-block w-100" alt="background image">
+        <div class="carousel-caption d-none d-md-block content">
+          <h1>Learn Javascript</h1>
+          <form action="{{ url_for('javascript') }}" method="GET">
+              <button class="btn btn-primary click-here" type="submit" style="margin-bottom: 170px;">Click Here</button>
+          </form>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='html-bg.jpg') }}" class="d-block w-100" alt="background image">
+        <div class="carousel-caption d-none d-md-block content">
+          <h1>Learn Web Dev</h1>
+          <form action="{{ url_for('web') }}" method="GET">
+              <button class="btn btn-primary click-here" type="submit">Click Here</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </a>
+</div>
+
+<div class="container-fluid" style="background-color: whitesmoke; margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px; height: fit-content;">
+    <div class="container" style="background-color: #afafaf; height: fit-content;">
+        <h1 class="content" style="padding-top: 3vw; color: black; font-size: 60px;" >
+            <u>About This Website</u>        
+        </h1>
+        <ul class="content">
+          <li>How to Properly Use this Website:</li>
+          <ul>
+            <li>For the visitors:</li>
+            <ul>
+              <li>You can use this website to see the source Code of the uploaded Files</li>
+            </ul>
+            <li>For the creators</li>
+            <ul>
+              <li>Write your code in an ide or text editor.</li>
+              <li>Run your code to check whether the code is correct or not.</li>
+              <li>If any bugs, Debug your code.</li>
+              <li>Try to write very clean code.</li>
+            </ul>
+          </ul>
+        </ul>
+        <ul class="content">
+          <li>This site is made by Amaan Mohd.</li>
+          <li>You can follow me on <a href="https://www.github.com/amaanmohd047">github</a></li>
+        </ul>
+        <br><br>
+    </div>
+</div>
+
+{% endblock %}

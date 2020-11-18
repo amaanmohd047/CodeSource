@@ -1,0 +1,46 @@
+{% extends 'dashboard.html' %}
+
+{% block style %}
+<style>
+    .name{
+        color: white;
+    }
+    .code {
+        color: white;
+        background-color: #262626;
+    }
+    .wide {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+</style>
+{% endblock %}
+
+
+{% block main %}
+<div class="container">
+    <form action="{{ url_for('post') }}" method="POST">
+        <div class="input-group mb-3">
+            <input type="text" name="title" class="form-control code wide" placeholder="Title Of the Entry" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <span class="input-group-text code" id="basic-addon2">{{ ext }}</span>
+        </div>
+        <br>
+        <div class="alert alert-warning" role="alert">
+            Leave one line blank in the top.{i.e. Press ENTER and then start writing}
+        </div>
+        <br>
+        <div class="form-floating">
+            <textarea class="form-control code" placeholder="Write the code here...." id="floatingTextarea" name ="code" rows=20></textarea>
+        </div>
+        <input type="hidden" name="extension" value="{{ ext }}">
+        <br>
+        <button style="float:right; padding: 15px 80px 15px 80px ;" type="submit" class="btn btn-outline-light btn-lg">
+            Save
+        </button>
+    </form>
+    <br><br><br><hr style="background-color: white;"><br>
+    <div class="alert alert-warning" role="alert">
+        Do not add ({{ ext }}) in title
+    </div>
+</div>
+{% endblock %}
