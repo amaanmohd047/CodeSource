@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Search Results
+{% endblock %}
+
+{% block style %}
+<style>
+    .header{
+        font-family: 'Open Sans', sans-serif;
+        font-size: 7vw;
+        text-align: center;
+        color: rgb(43, 43, 43);
+    }
+</style>
+{% endblock %}
+
+{% block section1 %}
+<br>
+    <div class="alert alert-danger" role="alert">
+        <h1>No match Found.. Try searching another keyword.</h1>
+    </div>
+<br>
+{% endblock %}

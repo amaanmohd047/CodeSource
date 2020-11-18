@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Search Results
+{% endblock %}
+
+{% block style %}
+<style>
+    .header{
+        font-family: 'Open Sans', sans-serif;
+        font-size: 4vw;
+        color: rgb(43, 43, 43);
+    }
+</style>
+{% endblock %}
+
+{% block section1 %}
+<br>
+
+<div class="container">
+    <h1 class="header">
+            All Search Results for "{{search_title}}"...
+    </h1>
+    <br>
+    <table class="table table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Title</th>
+            <th scope="col">View</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for entry in search_result %}
+                <tr>
+                    <th scope="row">{{entry.id}}</th>
+                    <td>{{entry.title}}</td>
+                    <td><a class="btn btn-outline-dark" href="/view/{{entry.id}}" role="button">View</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+</div>
+<br><br><br><br><br><br><br>
+
+{% endblock %}

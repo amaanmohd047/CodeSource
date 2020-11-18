@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Python-CodeSource
+{% endblock %}
+
+{% block style %}
+<style>
+    .header{
+        font-family: 'Open Sans', sans-serif;
+        font-size: 4vw;
+        text-align: center;
+        color: rgb(43, 43, 43);
+    }
+    .code{
+        background-color: black;
+        color: rgb(89, 255, 12);
+        font-family: 'Open Sans', sans-serif;
+        padding-left: 2vw;
+        border-radius: 8px;
+    }
+</style>
+{% endblock %}
+
+{% block section1 %}
+<br>
+<div class="container">
+    <div class="flex">
+        <td><a class="btn btn-outline-secondary" href="{{url_for('pythonpage')}}" role="button">Back</a></td>        
+        <h1 class="header">
+            {{entry.title}}
+        </h1>
+    </div>
+    <br>
+    <div class="code">
+        <h4>
+            <pre>
+                <code>
+                    {{entry.code}}
+                </code>
+            </pre>
+        </h4>
+    </div>
+</div>
+<br><br><br>
+{% endblock %}

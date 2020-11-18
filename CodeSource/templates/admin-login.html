@@ -1,0 +1,94 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+    <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/floating-labels/">
+{% endblock %}
+
+
+{% block title %} Dashboard-Login {% endblock %}
+
+
+{% block style %}
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .box {
+        padding-top: 10px;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: rgba(207,207,207,0.3);
+        border: 5px solid black;
+        border: 5px solid white;
+        border-radius: 7px;        
+        width: 30vw;
+        margin-left: 35vw;
+        margin-bottom: 15vh; 
+      }
+      .bush {
+        color: black;
+        padding-top: 90px;
+        background-image: linear-gradient(to right, rgb(44, 44, 44), rgb(220, 220, 220));
+      }
+    </style>
+{% endblock %}
+
+    
+{% block section1 %}
+    <div class="bush">
+    
+        <main class="form-signin">
+          <div class="box">
+            <form action="{{ url_for('dashboard') }}" method="POST">
+                <div class="text-center mb-4">
+                <img class="mb-4" src="{{ url_for('static', filename="android-chrome-512x512.png") }}" alt="" width="112" height="112">
+                <h1 class="h3 mb-3 font-weight-normal" style="font-size: 45px; color: #333333;">Login Here</h1>
+                </div>
+                <br>
+                <div class="form-floating">
+                  <label for="floatingInput">Username</label>
+                  <input name="username" type="text" id="floatingInput" class="form-control" required autofocus>
+                </div>
+                <br>
+                <br>
+                <div class="form-floating">
+                  <label for="floatingPassword">Password</label>
+                  <input name="password" type="password" id="inputPassword" class="form-control" required>
+                  <input type="checkbox" onclick="myFunctionPassword()">Show Password 
+                </div>
+                <br>
+                <br>
+                <button class="btn btn-lg btn-outline-light btn-block" type="submit">Log in</button>
+            </form>
+          </div>
+        </main>
+        <br>
+        <br>
+        <br>
+    </div>
+
+  <script>
+    function myFunctionPassword() {
+      var x = document.getElementById("inputPassword");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+  </script>
+
+{% endblock %}

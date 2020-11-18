@@ -1,0 +1,31 @@
+{% extends 'dashboard.html' %}
+
+{% block main %}
+
+<div class="container">
+    <form action="/edit/{{entry.id}}" method="POST">
+        <div class="input-group mb-3">
+            <input type="text" name="title" class="form-control code wide" placeholder="Title Of the Entry" aria-label="Recipient's username" aria-describedby="basic-addon2" value="{{entry.title}}">
+            <span class="input-group-text code" id="basic-addon2">{{ entry.extension }}</span>
+        </div>
+        <br>
+        <div class="alert alert-warning" role="alert">
+            Leave one line blank in the top.{i.e. Press ENTER and then start writing}
+        </div>
+        <br>
+        <div class="form-floating">
+            <textarea class="form-control code" placeholder="Write the code here...." id="floatingTextarea" name ="code" rows=20>{{ entry.code}}</textarea>
+        </div>
+        <input type="hidden" name="extension" value="{{ entry.extension }}">
+        <br>
+        <button style="float:right; padding: 15px 80px 15px 80px ;" type="submit" class="btn btn-outline-light btn-lg">
+            Save
+        </button>
+    </form>
+    <br><br><br><hr style="background-color: white;"><br>
+    <div class="alert alert-warning" role="alert">
+        Do not add ({{ entry.extension }}) in title
+    </div>
+</div>
+
+{% endblock %}
