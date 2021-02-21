@@ -1,9 +1,9 @@
 {
     "configs": {
         "local_server": "True",
-        "gmail_username": "rabbitsfoot047",
-        "gmail_password": "';lkjhgfdsa",
-        "admin_username": "amaanmohd047",
+        "gmail_username": "rxxxxxxxxxxxx7",
+        "gmail_password": "xxxxxxxxxxx",
+        "admin_username": "axxxxxxxxxxx7",
         "admin_password": "]qw[eprotiyu",
         "local_uri": "sqlite:///codesource.sqlite",
         "production_uri": "sqlite:///codesource.sqlite"
